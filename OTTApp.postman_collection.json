@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "ecc17604-b124-4745-a7c6-9c38d124625c",
+		"name": "OTTApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10340421"
+	},
+	"item": [
+		{
+			"name": "login ( to Generate Token ) ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Anto\",\r\n  \"password\": \"Anto@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7279/api/ott/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7279",
+					"path": [
+						"api",
+						"ott",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Movie & TV Series List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQW50byIsImV4cCI6MTczODU2MzcwOH0.fYiA7StRt5Dp77lYNcDcWx8Hs91X_At0p1tz0pSVtYQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7279/api/ott/getList",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7279",
+					"path": [
+						"api",
+						"ott",
+						"getList"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
